@@ -1,0 +1,22 @@
+[mouse]
+hide_when_typing=true
+
+[font]
+normal = { family = "JetBrainsMono Nerd Font" }
+size=20
+
+[window]
+startup_mode = "Maximized"
+padding = { x = 0, y = 0 }
+# dynamic_padding = true
+# opacity = 0.85
+# blur = true
+decorations = "None"
+[cursor]
+style = { shape = "Beam", blinking = "Off" }
+vi_mode_style = { shape = "Block", blinking = "Off" }
+
+[general]
+import = [
+  "~/.config/alacritty/warm.toml"
+]
