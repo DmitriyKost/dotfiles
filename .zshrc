@@ -45,7 +45,7 @@ export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 export GO111MODULE=on
 
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#9ca3b2'
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#847568'
 # Enable vi mode
 # set -o vi
 #
@@ -53,7 +53,11 @@ export PATH="$HOME/Library/Python/3.9/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export MANPAGER="nvim +Man!"
 export FZF_DEFAULT_OPTS="
---color=fg:#D6DEEB,bg:#0F111A,hl:#8AFF80,fg+:#D6DEEB,bg+:#1E212A,hl+:#FFD580,info:#4E5563,prompt:#82AAFF,pointer:#8AFF80,marker:#C792EA
+--color=fg:#F5EFE7,bg:#141210,hl:#D88A5F
+--color=fg+:#FFF7EE,bg+:#352D27,hl+:#FFD479
+--color=info:#847568,prompt:#D88A5F,pointer:#B86A46
+--color=marker:#B48EED,spinner:#68B8A8,header:#8EB8D9
+--color=border:#6B5E53,gutter:#141210
 "
 # opencode
 export PATH=/home/dkost/.opencode/bin:$PATH

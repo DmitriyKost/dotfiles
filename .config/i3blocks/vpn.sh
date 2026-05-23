@@ -8,19 +8,19 @@ TUN_IFACES=$(ip -o link show | awk -F': ' '{print $2}' | grep -E '^(tun|tap|tun2
 
 if [[ -n "$OPENCONNECT" ]]; then
     ICON=""
-    COLOR="#7aa2f7"
+    COLOR="#6FA8DC"
 
 elif [[ -n "$TUN2SOCKS" ]]; then
     ICON=""
-    COLOR="#8aff80"
+    COLOR="#8FD39A"
 
 elif [[ -n "$OC_IFACES" || -n "$TUN_IFACES" ]]; then
     ICON=""
-    COLOR="#f3f99d"
+    COLOR="#F0B85F"
 
 else
     ICON=""
-    COLOR="#ff5874"
+    COLOR="#FF5F6D"
 fi
 
 TEXT=$(printf "%8s" "$ICON VPN ")
