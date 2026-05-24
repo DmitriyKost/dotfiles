@@ -186,7 +186,7 @@ prompt_build() {
 
     # Change %~ to %1~ if you only want the current directory name.
     # Change %~ to %3~ if you want max 3 path components.
-    parts=("%F{#8EB8D9}%~%f")
+    parts=("%F{#F0B85F}%~%f")
 
     [[ -n "$__prompt_exit" ]] && parts+=("$__prompt_exit")
     [[ -n "$__prompt_timer" ]] && parts+=("$__prompt_timer")
