@@ -1,4 +1,2 @@
-# Start i3 automatically if not already running
-if [[ -z $DISPLAY ]] && [[ $(tty) == /dev/tty1 ]]; then
-    exec startx
-fi
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
