@@ -111,7 +111,61 @@ local function file()
 	return "%#St_File# " .. name .. modified .. readonly .. " "
 end
 
+local dotfiles_gitdir = vim.env.HOME .. "/.dotfiles"
+local dotfiles_worktree = vim.env.HOME
+
+local function system_ok(cmd)
+	vim.fn.system(cmd)
+	return vim.v.shell_error == 0
+end
+
+local function is_inside_normal_git_repo(path)
+	return system_ok({
+		"git",
+		"-C",
+		vim.fn.fnamemodify(path, ":h"),
+		"rev-parse",
+		"--show-toplevel",
+	})
+end
+
+local function is_tracked_dotfile(path)
+	local rel = vim.fn.fnamemodify(path, ":~:.")
+	rel = rel:gsub("^~/?", "")
+
+	return system_ok({
+		"git",
+		"--git-dir=" .. dotfiles_gitdir,
+		"--work-tree=" .. dotfiles_worktree,
+		"ls-files",
+		"--error-unmatch",
+		"--",
+		rel,
+	})
+end
+
+local function should_show_git()
+	if vim.b.st_git_allowed ~= nil then
+		return vim.b.st_git_allowed
+	end
+
+	local path = vim.api.nvim_buf_get_name(0)
+
+	if path == "" then
+		vim.b.st_git_allowed = false
+		return false
+	end
+
+	vim.b.st_git_allowed = is_inside_normal_git_repo(path) or is_tracked_dotfile(path)
+
+	return vim.b.st_git_allowed
+end
+
 local function git()
+	if not should_show_git() then
+		return ""
+	end
+
 	local gitsigns = vim.b.gitsigns_status_dict
 	if not gitsigns or not gitsigns.head or gitsigns.head == "" then
 		return ""

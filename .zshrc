@@ -178,7 +178,7 @@ prompt_git() {
         untracked='?'
     fi
 
-    print -r -- "%F{#B48EED} ${branch}${staged}${dirty}${untracked}%f"
+    print -r -- "%F{#B48EED} ${branch}${staged}${dirty}${untracked}%f"
 }
 
 prompt_build() {
