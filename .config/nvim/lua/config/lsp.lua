@@ -63,37 +63,55 @@ vim.lsp.config("gopls", {
 			completeUnimported = true,
 			usePlaceholders = false,
 			analyses = {
-				unusedparams = true,
+				unreachable = false,
+				unusedparams = false,
+				shadow = false,
+				nilness = false,
+				unusedwrite = false,
+				useany = false,
 			},
 			hoverKind = "FullDocumentation",
-			staticcheck = true,
+			staticcheck = false,
 			semanticTokens = true,
+
+			hints = {
+				assignVariableTypes = true,
+				compositeLiteralFields = true,
+				compositeLiteralTypes = true,
+				constantValues = true,
+				functionTypeParameters = true,
+				parameterNames = true,
+				rangeVariableTypes = true,
+			},
 		},
 	},
 })
 
--- vim.lsp.config("basedpyright", {})
--- vim.lsp.config("clangd", {})
--- vim.lsp.config("cssls", {})
--- vim.lsp.config("html", {})
--- vim.lsp.config("jsonls", {})
--- vim.lsp.config("marksman", {})
--- vim.lsp.config("rust_analyzer", {})
--- vim.lsp.config("ts_ls", {})
--- vim.lsp.config("zls", {})
+vim.lsp.config("golangci_lint_ls", {
+	cmd = { "golangci-lint-langserver" },
+	root_markers = { ".golangci.yml", ".golangci.yaml", "go.mod", ".git" },
+	filetypes = { "go", "gomod" },
+	init_options = {
+		command = {
+			"golangci-lint",
+			"run",
+			"--output.json.path",
+			"stdout",
+			"--show-stats=false",
+			"--issues-exit-code=1",
+		},
+	},
+})
 
 vim.lsp.enable({
 	"lua_ls",
 	"gopls",
+	"golangci_lint_ls",
 	-- "basedpyright",
 	-- "clangd",
 	-- "cssls",
 	-- "html",
-	-- "jsonls",
-	-- "marksman",
 	"rust_analyzer",
-	-- "ts_ls",
-	-- "zls",
 })
 
 vim.api.nvim_create_autocmd("LspAttach", {

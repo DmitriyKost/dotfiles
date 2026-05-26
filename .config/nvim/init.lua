@@ -28,7 +28,7 @@ require("config.autocmds")
 require("config.keymaps")
 require("config.plugins")
 require("config.lsp")
-require("config.dbee")
+require("config.dadbod")
 
 vim.cmd.colorscheme("warm")
 require("config.statusline").setup()
