@@ -186,7 +186,7 @@ local groups = {
 	Italic = { italic = true },
 
 	Error = { fg = c.red, bold = true },
-	Todo = { fg = c.black, bg = c.orange, bold = true },
+	Todo = { fg = c.light_grey, bg = "NONE", italic = true, bold = true },
 
 	-- diagnostics
 	DiagnosticError = { fg = c.red },
@@ -318,7 +318,11 @@ local groups = {
 	["@text.note"] = { fg = c.blue },
 	["@text.warning"] = { fg = c.yellow },
 	["@text.danger"] = { fg = c.red },
-	["@todo"] = { fg = c.black, bg = c.orange, bold = true },
+	["@todo"] = { fg = c.light_grey, bg = "NONE", italic = true },
+	["@comment.todo"] = { fg = c.light_grey, bg = "NONE", italic = true },
+	["@comment.note"] = { fg = c.light_grey, bg = "NONE", italic = true },
+	["@comment.warning"] = { fg = c.light_grey, bg = "NONE", italic = true },
+	["@comment.error"] = { fg = c.light_grey, bg = "NONE", italic = true },
 	["@type"] = { fg = c.yellow },
 	["@type.builtin"] = { fg = c.yellow },
 	["@type.definition"] = { fg = c.yellow },
