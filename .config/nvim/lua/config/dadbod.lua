@@ -12,9 +12,7 @@ local specs = {
 		name = "vim-dadbod-completion",
 	},
 }
-
 local loaded = false
-
 local lazy_commands = {
 	"DB",
 	"DBUI",

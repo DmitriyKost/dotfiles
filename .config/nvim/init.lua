@@ -29,6 +29,7 @@ require("config.keymaps")
 require("config.plugins")
 require("config.lsp")
 require("config.dadbod")
+require("config.csvview")
 
 vim.cmd.colorscheme("warm")
 require("config.statusline").setup()
