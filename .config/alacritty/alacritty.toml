@@ -13,6 +13,7 @@ padding = { x = 0, y = 0 }
 # blur = true
 decorations = "None"
 [cursor]
+blink_timeout = 0
 style = { shape = "Beam", blinking = "Off" }
 vi_mode_style = { shape = "Block", blinking = "Off" }
 
