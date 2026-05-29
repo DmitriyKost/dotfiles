@@ -3,7 +3,7 @@ hide_when_typing=true
 
 [font]
 normal = { family = "JetBrainsMono Nerd Font" }
-size=19
+size=20
 
 [window]
 startup_mode = "Maximized"

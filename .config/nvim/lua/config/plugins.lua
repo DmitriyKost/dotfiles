@@ -113,21 +113,5 @@ require("render-markdown").setup({
 	file_types = { "markdown", "opencode_output" },
 })
 
-require("opencode").setup({
-	preferred_picker = "telescope",
-	preferred_completion = "blink",
-	default_global_keymaps = true,
-	default_mode = "build",
-	keymap_prefix = "<leader>o",
-
-	ui = {
-		position = "right",
-		window_width = 0.50,
-		zoom_width = 0.80,
-	},
-
-	opencode_executable = "opencode",
-})
-
 require("mini.icons").setup()
 MiniIcons.mock_nvim_web_devicons()

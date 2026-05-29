@@ -24,7 +24,6 @@ vim.pack.add({
 
 	"https://github.com/windwp/nvim-autopairs",
 	"https://github.com/tpope/vim-fugitive",
-	"https://github.com/sudo-tee/opencode.nvim",
 	"https://github.com/MeanderingProgrammer/render-markdown.nvim",
 })
 
@@ -35,6 +34,7 @@ require("config.plugins")
 require("config.lsp")
 require("config.dadbod")
 require("config.csvview")
+require("config.opencode")
 
 vim.cmd.colorscheme("warm")
 require("config.statusline").setup()

@@ -1,18 +1,25 @@
 local map = vim.keymap.set
-local builtin = require("telescope.builtin")
 
 map("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlight" })
 
-map("n", ";", ":", { desc = "CMD enter command mode" })
+-- map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>", { desc = "Escape insert mode" })
 
 map("n", "-", "<cmd>Oil<CR>", { desc = "Open parent directory" })
 map("n", "<leader>e", "<cmd>Oil<CR>", { desc = "Explorer" })
 
-map("n", "<leader>ff", builtin.find_files, { desc = "Find files" })
-map("n", "<leader>fw", builtin.live_grep, { desc = "Live grep" })
-map("n", "<leader>fb", builtin.buffers, { desc = "Buffers" })
-map("n", "<leader>fh", builtin.help_tags, { desc = "Help tags" })
+map("n", "<leader>ff", function()
+	require("telescope.builtin").find_files()
+end, { desc = "Find files" })
+map("n", "<leader>fw", function()
+	require("telescope.builtin").live_grep()
+end, { desc = "Live grep" })
+map("n", "<leader>fb", function()
+	require("telescope.builtin").buffers()
+end, { desc = "Buffers" })
+map("n", "<leader>fh", function()
+	require("telescope.builtin").help_tags()
+end, { desc = "Help tags" })
 
 map("n", "<Up>", function()
 	vim.diagnostic.jump({
