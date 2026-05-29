@@ -5,7 +5,6 @@ vim.pack.add({
 	"https://github.com/nvim-lua/plenary.nvim",
 
 	"https://github.com/stevearc/oil.nvim",
-	"https://github.com/nvim-telescope/telescope.nvim",
 	"https://github.com/christoomey/vim-tmux-navigator",
 	"https://github.com/lewis6991/gitsigns.nvim",
 
@@ -35,6 +34,7 @@ require("config.lsp")
 require("config.dadbod")
 require("config.csvview")
 require("config.opencode")
+require("config.telescope")
 
 vim.cmd.colorscheme("warm")
 require("config.statusline").setup()

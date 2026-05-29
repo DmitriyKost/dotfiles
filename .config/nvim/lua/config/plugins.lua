@@ -37,8 +37,6 @@ require("oil").setup({
 	},
 })
 
-require("telescope").setup({})
-
 require("nvim-autopairs").setup({
 	check_ts = false,
 	disable_filetype = { "TelescopePrompt" },

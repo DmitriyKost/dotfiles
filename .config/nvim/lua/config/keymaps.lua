@@ -8,19 +8,6 @@ map("i", "jk", "<ESC>", { desc = "Escape insert mode" })
 map("n", "-", "<cmd>Oil<CR>", { desc = "Open parent directory" })
 map("n", "<leader>e", "<cmd>Oil<CR>", { desc = "Explorer" })
 
-map("n", "<leader>ff", function()
-	require("telescope.builtin").find_files()
-end, { desc = "Find files" })
-map("n", "<leader>fw", function()
-	require("telescope.builtin").live_grep()
-end, { desc = "Live grep" })
-map("n", "<leader>fb", function()
-	require("telescope.builtin").buffers()
-end, { desc = "Buffers" })
-map("n", "<leader>fh", function()
-	require("telescope.builtin").help_tags()
-end, { desc = "Help tags" })
-
 map("n", "<Up>", function()
 	vim.diagnostic.jump({
 		count = -1,
