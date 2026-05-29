@@ -1,4 +1,4 @@
-require("config.lazy").plugin({
+require("lazy").plugin({
 	src = "https://github.com/hat0uma/csvview.nvim",
 	cmd = { "CsvViewEnable", "CsvViewDisable", "CsvViewToggle" },
 	ft = { "csv", "tsv" },

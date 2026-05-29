@@ -230,9 +230,14 @@ prompt_title() {
     print -Pn "\e]0;%~\a"
 }
 
+prompt_cursor() {
+    printf '\e[6 q'
+}
+
 add-zsh-hook preexec prompt_preexec
 add-zsh-hook precmd prompt_precmd
 add-zsh-hook precmd prompt_title
+add-zsh-hook precmd prompt_cursor
 
 prompt_build
 

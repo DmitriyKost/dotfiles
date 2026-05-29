@@ -1,4 +1,4 @@
-require("config.lazy").plugin({
+require("lazy").plugin({
 	src = "https://github.com/sudo-tee/opencode.nvim",
 	cmd = { "Opencode" },
 	keys = {

@@ -1,4 +1,4 @@
-require("config.lazy").plugin({
+require("lazy").plugin({
 	src = {
 		"https://github.com/tpope/vim-dadbod",
 		"https://github.com/kristijanhusak/vim-dadbod-ui",

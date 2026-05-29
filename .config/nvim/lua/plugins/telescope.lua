@@ -1,4 +1,4 @@
-local lazy = require("config.lazy")
+local lazy = require("lazy")
 
 lazy.plugin({
 	src = "https://github.com/nvim-telescope/telescope.nvim",
