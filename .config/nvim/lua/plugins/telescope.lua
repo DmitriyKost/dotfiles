@@ -1,6 +1,6 @@
 local lazy = require("lazy")
 
-lazy.plugin({
+return lazy.plugin({
 	src = "https://github.com/nvim-telescope/telescope.nvim",
 	cmd = { "Telescope" },
 	keys = {

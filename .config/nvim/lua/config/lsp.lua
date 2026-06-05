@@ -72,7 +72,7 @@ vim.lsp.config("gopls", {
 			},
 			hoverKind = "FullDocumentation",
 			staticcheck = false,
-			semanticTokens = true,
+			semanticTokens = false,
 
 			hints = {
 				assignVariableTypes = true,
@@ -99,6 +99,32 @@ vim.lsp.config("golangci_lint_ls", {
 			"stdout",
 			"--show-stats=false",
 			"--issues-exit-code=1",
+		},
+	},
+})
+
+vim.lsp.config("rust_analyzer", {
+	settings = {
+		["rust-analyzer"] = {
+			check = {
+				command = "clippy",
+				ignore = {
+					"dead_code",
+					"unused_variables",
+					"unused_imports",
+				},
+			},
+
+			diagnostics = {
+				styleLints = {
+					enable = true,
+				},
+				warningsAsHint = {
+					"dead_code",
+					"unused_variables",
+					"unused_imports",
+				},
+			},
 		},
 	},
 })

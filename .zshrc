@@ -95,7 +95,7 @@ export FZF_DEFAULT_OPTS="
 --color=fg:#F5EFE7,bg:#141210,hl:#D88A5F
 --color=fg+:#FFF7EE,bg+:#352D27,hl+:#FFD479
 --color=info:#847568,prompt:#D88A5F,pointer:#B86A46
---color=marker:#B48EED,spinner:#68B8A8,header:#8EB8D9
+--color=marker:#C3B1FF,spinner:#68B8A8,header:#8EB8D9
 --color=border:#6B5E53,gutter:#141210
 "
 
@@ -180,7 +180,7 @@ prompt_git() {
         untracked='?'
     fi
 
-    print -r -- "%F{#B48EED} ${branch}${staged}${dirty}${untracked}%f"
+    print -r -- "%F{#C3B1FF} ${branch}${staged}${dirty}${untracked}%f"
 }
 
 prompt_build() {

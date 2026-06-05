@@ -6,6 +6,8 @@ require("lazy").plugin({
 		{ "<leader>og", "Opencode toggle", mode = { "n", "v" }, desc = "Toggle Opencode window" },
 	},
 	config = function()
+		require("plugins.telescope")()
+
 		require("opencode").setup({
 			preferred_picker = "telescope",
 			preferred_completion = "blink",
