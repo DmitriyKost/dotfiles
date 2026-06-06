@@ -41,3 +41,5 @@ map("n", "<C-k>", "<cmd>TmuxNavigateUp<CR>", { desc = "Window up" })
 
 map("n", "<leader>ge", "oif err != nil {<CR>}<ESC>ko", { desc = "Golang err snippet" })
 map("n", "<C-a>", "<Nop>")
+
+map("n", "<leader>mr", "<cmd>RenderMarkdown buf_toggle<CR>", { desc = "Toggle markdown render for buffer" })

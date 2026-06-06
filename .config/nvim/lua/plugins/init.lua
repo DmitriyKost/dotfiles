@@ -134,6 +134,7 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 require("render-markdown").setup({
+	completions = { lsp = { enabled = true } },
 	anti_conceal = { enabled = false },
 	file_types = { "markdown", "opencode_output" },
 })
