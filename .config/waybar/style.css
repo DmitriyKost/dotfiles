@@ -1,0 +1,82 @@
+/* ─── Reset & defaults ──────────────────────────────────────────────── */
+* {
+  border:        none;
+  border-radius: 0;
+  font-family:   "JetBrainsMono Nerd Font";
+  font-size:     24px;
+  min-height:    0;
+}
+
+window#waybar {
+  background: #141210;
+  color:      #F5EFE7;
+}
+
+/* ─── Workspaces (modules-left) ─────────────────────────────────────── */
+#workspaces button {
+  padding:       0 6px;
+  margin:        0;
+  min-width:     0;
+  background:    #141210;
+  color:         #6B5E53;
+  border:        none;
+  border-radius: 0;
+  box-shadow:    none;
+}
+
+#workspaces button label {
+  padding:   0;
+  margin:    0;
+  min-width: 0;
+}
+
+#workspaces button.focused {
+  background: #352D27;
+  color:      #ffffff;
+}
+
+#workspaces button.active {
+  background: #1B1815;
+  color:      #847568;
+}
+
+#workspaces button.urgent {
+  background: #FF5F6D;
+  color:      #141210;
+}
+
+/* ─── Binding mode indicator ────────────────────────────────────────── */
+#mode {
+  padding:    0 12px;
+  background: #D8A85F;
+  color:      #141210;
+}
+
+/* ─── Right modules: shared padding & color ─────────────────────────── */
+#custom-player,
+#custom-volume,
+#clock,
+#language,
+#custom-system,
+#custom-nvidia,
+#custom-vpn,
+#tray {
+  padding: 0 12px;
+  color:   #F5EFE7;
+}
+
+/* ─── Right modules: vertical separator (i3blocks " ⎪ " style) ──────── */
+#custom-volume,
+#clock,
+#language,
+#custom-system,
+#custom-nvidia,
+#custom-vpn,
+#tray {
+  border-left: 1px solid #847568;
+}
+
+/* ─── Per-module color overrides ────────────────────────────────────── */
+#language {
+  color: #D8A85F;
+}

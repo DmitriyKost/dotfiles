@@ -1,0 +1,39 @@
+# ── appearance ────────────────────────────────────────────────
+font=JetBrainsMono Nerd Font 11
+background-color=#1B1815
+text-color=#F5EFE7
+border-color=#352D27
+border-size=2
+border-radius=0
+width=350
+height=150
+padding=12
+margin=8
+
+# ── layout / position ─────────────────────────────────────────
+anchor=top-right
+layer=overlay
+max-visible=5
+
+# ── behavior ──────────────────────────────────────────────────
+default-timeout=5000
+ignore-timeout=0
+
+# ── progress (e.g. volume/brightness) ─────────────────────────
+progress-color=over #352D27
+
+# ── per-urgency overrides ─────────────────────────────────────
+[urgency=low]
+border-color=#6B5E53
+text-color=#847568
+default-timeout=3000
+
+[urgency=normal]
+border-color=#352D27
+default-timeout=5000
+
+[urgency=critical]
+background-color=#1B1815
+border-color=#FF5F6D
+text-color=#F5EFE7
+default-timeout=0

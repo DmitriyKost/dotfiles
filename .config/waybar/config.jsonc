@@ -1,0 +1,72 @@
+// ─── Bar layout ──────────────────────────────────────────────────────────────
+{
+  "layer":    "top",
+  "position": "top",
+  "height":   40,
+  "spacing":  0,            // separators come from CSS border-left
+
+  // ─── Module placement (display order, left to right) ───────────────────────
+  "modules-left":   ["sway/workspaces", "sway/mode"],
+  "modules-center": [],
+  "modules-right": [
+    "custom/player",
+    "custom/volume",
+    "clock",
+    "sway/language",
+    "custom/system",
+    "custom/nvidia",
+    "custom/vpn",
+    "tray"
+  ],
+
+  // ─── Left modules ──────────────────────────────────────────────────────────
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "format":         "{name}"
+  },
+
+  // ─── Right modules (in display order) ──────────────────────────────────────
+  "custom/player": {
+    "exec":     "~/.config/waybar/scripts/player.sh",
+    "interval": 1,
+    "signal":   10
+  },
+
+  "custom/volume": {
+    "exec":     "~/.config/waybar/scripts/volume.sh",
+    "interval": 30,
+    "signal":   12
+  },
+
+  "clock": {
+    "format":   "{:%a %b %d %H:%M:%S}",
+    "interval": 1
+  },
+
+  "sway/language": {
+    "format":         "{short}",
+    "min-length":     2,
+    "max-length":     2,
+    "tooltip-format": "{long}"
+  },
+
+  "custom/system": {
+    "exec":     "~/.config/waybar/scripts/system.sh",
+    "interval": 5
+  },
+
+  "custom/nvidia": {
+    "exec":     "~/.config/waybar/scripts/nvidia.sh",
+    "interval": 5
+  },
+
+  "custom/vpn": {
+    "exec":     "~/.config/waybar/scripts/vpn.sh",
+    "interval": 5,
+    "signal":   21
+  },
+
+  "tray": {
+    "spacing": 10
+  }
+}

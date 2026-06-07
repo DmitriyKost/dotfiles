@@ -1,0 +1,23 @@
+set $mod Mod4
+
+font pango:JetBrainsMono Nerd Font 16
+
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+include ~/.config/sway/conf.d/autostart.conf
+include ~/.config/sway/conf.d/input-media.conf
+include ~/.config/sway/conf.d/window-rules.conf
+include ~/.config/sway/conf.d/keybindings.conf
+include ~/.config/sway/conf.d/workspaces.conf
+include ~/.config/sway/conf.d/modes.conf
+include ~/.config/sway/themes/warm.conf
+include ~/.config/sway/conf.d/bar.conf

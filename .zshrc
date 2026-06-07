@@ -67,7 +67,6 @@ alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 export GOPATH="$HOME/go"
 export GO111MODULE=on
 
-
 export MANPAGER='nvim +Man!'
 
 typeset -U path
@@ -247,3 +246,6 @@ prompt_build
 # -----------------------------
 
 zinit light zsh-users/zsh-syntax-highlighting
+
+# local overrides (work secrets, machine-specific) — not tracked
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
