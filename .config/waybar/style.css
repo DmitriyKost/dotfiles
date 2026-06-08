@@ -47,7 +47,7 @@ window#waybar {
 
 /* ─── Binding mode indicator ────────────────────────────────────────── */
 #mode {
-  padding:    0 12px;
+  padding:    0 4px;
   background: #D8A85F;
   color:      #141210;
 }
@@ -73,7 +73,7 @@ window#waybar {
 #custom-nvidia,
 #custom-vpn,
 #tray {
-  border-left: 1px solid #847568;
+  border-left: 2px solid #847568;
 }
 
 /* ─── Per-module color overrides ────────────────────────────────────── */

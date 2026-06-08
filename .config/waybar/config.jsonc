@@ -2,7 +2,7 @@
 {
   "layer":    "top",
   "position": "top",
-  "height":   40,
+  "height":   44,
   "spacing":  0,            // separators come from CSS border-left
 
   // ─── Module placement (display order, left to right) ───────────────────────
