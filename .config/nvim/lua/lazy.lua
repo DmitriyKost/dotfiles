@@ -21,11 +21,22 @@ local function normalize_sources(src)
 	end
 
 	local specs, names = {}, {}
+
 	for _, entry in ipairs(src) do
-		local url = type(entry) == "table" and entry.src or entry
-		local name = type(entry) == "table" and entry.name or pkg_name(url)
-		table.insert(specs, { src = url, name = name })
-		table.insert(names, name)
+		local spec
+
+		if type(entry) == "table" then
+			spec = vim.tbl_extend("force", {}, entry)
+			spec.name = spec.name or pkg_name(spec.src)
+		else
+			spec = {
+				src = entry,
+				name = pkg_name(entry),
+			}
+		end
+
+		table.insert(specs, spec)
+		table.insert(names, spec.name)
 	end
 
 	return specs, names
