@@ -1,3 +1,30 @@
+-- Eagerly loaded plugins. Lazily loaded ones live in their own files in this
+-- directory and are auto-required by the loop at the bottom.
+vim.pack.add({
+	"https://github.com/nvim-lua/plenary.nvim",
+
+	"https://github.com/stevearc/oil.nvim",
+	"https://github.com/christoomey/vim-tmux-navigator",
+	"https://github.com/lewis6991/gitsigns.nvim",
+
+	"https://github.com/brenoprata10/nvim-highlight-colors",
+
+	"https://github.com/stevearc/conform.nvim",
+	"https://github.com/neovim/nvim-lspconfig",
+	"https://github.com/saghen/blink.cmp",
+	"https://github.com/rafamadriz/friendly-snippets",
+
+	"https://github.com/nvim-mini/mini.indentscope",
+	"https://github.com/nvim-mini/mini.surround",
+	"https://github.com/nvim-mini/mini.comment",
+	"https://github.com/nvim-mini/mini.ai",
+	"https://github.com/nvim-mini/mini.icons",
+
+	"https://github.com/windwp/nvim-autopairs",
+	"https://github.com/tpope/vim-fugitive",
+	"https://github.com/MeanderingProgrammer/render-markdown.nvim",
+})
+
 require("gitsigns").setup({
 	worktrees = {
 		{
@@ -36,8 +63,6 @@ require("oil").setup({
 		["<C-k>"] = false,
 	},
 })
-
-require("telescope").setup({})
 
 require("nvim-autopairs").setup({
 	check_ts = false,
@@ -109,22 +134,19 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 require("render-markdown").setup({
+	completions = { lsp = { enabled = true } },
 	anti_conceal = { enabled = false },
 	file_types = { "markdown", "opencode_output" },
 })
 
-require("opencode").setup({
-	preferred_picker = "telescope",
-	preferred_completion = "blink",
-	default_global_keymaps = true,
-	default_mode = "build",
-	keymap_prefix = "<leader>o",
+require("mini.icons").setup()
+MiniIcons.mock_nvim_web_devicons()
 
-	ui = {
-		position = "right",
-		window_width = 0.50,
-		zoom_width = 0.80,
-	},
-
-	opencode_executable = "opencode",
-})
+-- Auto-load every lazy plugin spec in this directory (each file registers its
+-- own triggers via require("lazy").plugin{...}).
+for _, path in ipairs(vim.api.nvim_get_runtime_file("lua/plugins/*.lua", true)) do
+	local name = path:match("([^/]+)%.lua$")
+	if name ~= "init" then
+		require("plugins." .. name)
+	end
+end

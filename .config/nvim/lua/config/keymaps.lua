@@ -1,18 +1,12 @@
 local map = vim.keymap.set
-local builtin = require("telescope.builtin")
 
 map("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlight" })
 
-map("n", ";", ":", { desc = "CMD enter command mode" })
+-- map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>", { desc = "Escape insert mode" })
 
 map("n", "-", "<cmd>Oil<CR>", { desc = "Open parent directory" })
 map("n", "<leader>e", "<cmd>Oil<CR>", { desc = "Explorer" })
-
-map("n", "<leader>ff", builtin.find_files, { desc = "Find files" })
-map("n", "<leader>fw", builtin.live_grep, { desc = "Live grep" })
-map("n", "<leader>fb", builtin.buffers, { desc = "Buffers" })
-map("n", "<leader>fh", builtin.help_tags, { desc = "Help tags" })
 
 map("n", "<Up>", function()
 	vim.diagnostic.jump({
@@ -48,5 +42,4 @@ map("n", "<C-k>", "<cmd>TmuxNavigateUp<CR>", { desc = "Window up" })
 map("n", "<leader>ge", "oif err != nil {<CR>}<ESC>ko", { desc = "Golang err snippet" })
 map("n", "<C-a>", "<Nop>")
 
-map("n", "<leader>/", "gcc", { remap = true, desc = "Toggle comment line" })
-map("x", "<leader>/", "gc", { remap = true, desc = "Toggle comment selection" })
+map("n", "<leader>mr", "<cmd>RenderMarkdown buf_toggle<CR>", { desc = "Toggle markdown render for buffer" })

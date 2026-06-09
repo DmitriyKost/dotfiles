@@ -1,6 +1,6 @@
--- vim.api.nvim_create_autocmd("VimLeave", {
--- 	group = vim.api.nvim_create_augroup("reset_cursor_on_exit", { clear = true }),
--- 	callback = function()
--- 		vim.opt.guicursor = "a:ver25"
--- 	end,
--- })
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "markdown", "text" },
+	callback = function()
+		vim.opt_local.wrap = true
+	end,
+})
