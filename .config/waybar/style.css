@@ -1,3 +1,15 @@
+/* ─── Palette ───────────────────────────────────────────────────────── */
+@define-color bg       #141210;   /* sway $bg       */
+@define-color bg_alt   #221E1A;   /* sway $bg_alt   */
+@define-color fg       #F5EFE7;   /* sway $fg       */
+@define-color fg_alt   #847568;   /* sway $fg_alt   */
+@define-color muted    #6B5E53;   /* sway $muted    */
+@define-color accent   #352D27;   /* sway $accent   */
+@define-color urgent   #FF5F6D;   /* sway $urgent / kitty color1  */
+@define-color warning  #D8A85F;   /* sway $warning                */
+@define-color ok       #8FD39A;   /* kitty color2 (green)         */
+@define-color white    #FFFFFF;   /* kitty color15                */
+
 /* ─── Reset & defaults ──────────────────────────────────────────────── */
 * {
   border:        none;
@@ -7,21 +19,27 @@
   min-height:    0;
 }
 
+/* ─── Bar surface ───────────────────────────────────────────────────── */
 window#waybar {
-  background: #141210;
-  color:      #F5EFE7;
+  background: @bg;
+  color:      @fg;
 }
 
-/* ─── Workspaces (modules-left) ─────────────────────────────────────── */
+/* ─── Workspaces: each button is its own block ──────────────────────── */
+#workspaces {
+  margin:  0;
+  padding: 0;
+}
+
 #workspaces button {
-  padding:       0 6px;
-  margin:        0;
+  padding:       0 8px;
+  margin:        5px 2px;
   min-width:     0;
-  background:    #141210;
-  color:         #6B5E53;
-  border:        none;
+  background:    @bg_alt;
+  color:         @fg_alt;
   border-radius: 0;
   box-shadow:    none;
+  transition:    background 150ms ease, color 150ms ease;
 }
 
 #workspaces button label {
@@ -31,28 +49,30 @@ window#waybar {
 }
 
 #workspaces button.focused {
-  background: #352D27;
-  color:      #ffffff;
+  background: @accent;
+  color:      @white;
 }
 
 #workspaces button.active {
-  background: #1B1815;
-  color:      #847568;
+  background: @bg_alt;
+  color:      @fg_alt;
 }
 
 #workspaces button.urgent {
-  background: #FF5F6D;
-  color:      #141210;
+  background: @urgent;
+  color:      @bg;
 }
 
 /* ─── Binding mode indicator ────────────────────────────────────────── */
 #mode {
-  padding:    0 4px;
-  background: #D8A85F;
-  color:      #141210;
+  padding:       0 12px;
+  margin:        5px 3px;
+  background:    @warning;
+  color:         @bg;
+  border-radius: 0;
 }
 
-/* ─── Right modules: shared padding & color ─────────────────────────── */
+/* ─── Right modules: pill surface ───────────────────────────────────── */
 #custom-player,
 #custom-volume,
 #clock,
@@ -61,22 +81,30 @@ window#waybar {
 #custom-nvidia,
 #custom-vpn,
 #tray {
-  padding: 0 12px;
-  color:   #F5EFE7;
+  padding:       0 12px;
+  margin:        5px 3px;
+  background:    @bg_alt;
+  color:         @fg;
+  border-radius: 0;
+  transition:    color 200ms ease, background 200ms ease;
 }
 
-/* ─── Right modules: vertical separator (i3blocks " ⎪ " style) ──────── */
-#custom-volume,
-#clock,
-#language,
-#custom-system,
-#custom-nvidia,
-#custom-vpn,
-#tray {
-  border-left: 2px solid #847568;
-}
+#tray { padding: 0 8px; }
 
-/* ─── Per-module color overrides ────────────────────────────────────── */
-#language {
-  color: #D8A85F;
-}
+/* Outer blocks flush with the bar edges */
+#tray { margin-right: 0; }
+
+/* ─── Per-module accent colors ──────────────────────────────────────── */
+#language { color: @warning; }
+
+/* Player state */
+#custom-player.playing { color: @ok; }
+#custom-player.paused  { color: @warning; }
+#custom-player.none    { color: @muted; }
+
+/* Volume state */
+#custom-volume.muted { color: @urgent; }
+
+/* VPN state */
+#custom-vpn.on  { color: @ok; }
+#custom-vpn.off { color: @muted; }

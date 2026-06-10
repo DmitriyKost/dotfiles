@@ -3,7 +3,7 @@
   "layer":    "top",
   "position": "top",
   "height":   44,
-  "spacing":  0,            // separators come from CSS border-left
+  "spacing":  0,
 
   // ─── Module placement (display order, left to right) ───────────────────────
   "modules-left":   ["sway/workspaces", "sway/mode"],
@@ -27,49 +27,52 @@
 
   // ─── Right modules (in display order) ──────────────────────────────────────
   "custom/player": {
-    "exec":     "~/.config/waybar/scripts/player.sh",
-    "interval": 1,
-    "signal":   10,
-    "tooltip": false
+    "exec":        "~/.config/waybar/scripts/player.sh",
+    "return-type": "json",
+    "interval":    1,
+    "signal":      10,
+    "tooltip":     false
   },
 
   "custom/volume": {
-    "exec":     "~/.config/waybar/scripts/volume.sh",
-    "interval": 30,
-    "signal":   12,
-    "tooltip": false
+    "exec":        "~/.config/waybar/scripts/volume.sh",
+    "return-type": "json",
+    "interval":    30,
+    "signal":      12,
+    "tooltip":     false
   },
 
   "clock": {
-    "format":   "{:%a %b %d %H:%M:%S}",
+    "format":   "󰃭 {:%a %b %d  %H:%M:%S}",
     "interval": 1,
-    "tooltip": false
+    "tooltip":  false
   },
 
   "sway/language": {
-    "format":         "{short}",
-    "min-length":     2,
-    "max-length":     2,
-    "tooltip": false
+    "format":     "󰗊 {short}",
+    "min-length": 4,
+    "max-length": 4,
+    "tooltip":    false
   },
 
   "custom/system": {
     "exec":     "~/.config/waybar/scripts/system.sh",
     "interval": 5,
-    "tooltip": false
+    "tooltip":  false
   },
 
   "custom/nvidia": {
     "exec":     "~/.config/waybar/scripts/nvidia.sh",
     "interval": 5,
-    "tooltip": false
+    "tooltip":  false
   },
 
   "custom/vpn": {
-    "exec":     "~/.config/waybar/scripts/vpn.sh",
-    "interval": 5,
-    "signal":   21,
-    "tooltip": false
+    "exec":        "~/.config/waybar/scripts/vpn.sh",
+    "return-type": "json",
+    "interval":    5,
+    "signal":      21,
+    "tooltip":     false
   },
 
   "tray": {
