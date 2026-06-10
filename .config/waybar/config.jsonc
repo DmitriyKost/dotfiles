@@ -29,41 +29,47 @@
   "custom/player": {
     "exec":     "~/.config/waybar/scripts/player.sh",
     "interval": 1,
-    "signal":   10
+    "signal":   10,
+    "tooltip": false
   },
 
   "custom/volume": {
     "exec":     "~/.config/waybar/scripts/volume.sh",
     "interval": 30,
-    "signal":   12
+    "signal":   12,
+    "tooltip": false
   },
 
   "clock": {
     "format":   "{:%a %b %d %H:%M:%S}",
-    "interval": 1
+    "interval": 1,
+    "tooltip": false
   },
 
   "sway/language": {
     "format":         "{short}",
     "min-length":     2,
     "max-length":     2,
-    "tooltip-format": "{long}"
+    "tooltip": false
   },
 
   "custom/system": {
     "exec":     "~/.config/waybar/scripts/system.sh",
-    "interval": 5
+    "interval": 5,
+    "tooltip": false
   },
 
   "custom/nvidia": {
     "exec":     "~/.config/waybar/scripts/nvidia.sh",
-    "interval": 5
+    "interval": 5,
+    "tooltip": false
   },
 
   "custom/vpn": {
     "exec":     "~/.config/waybar/scripts/vpn.sh",
     "interval": 5,
-    "signal":   21
+    "signal":   21,
+    "tooltip": false
   },
 
   "tray": {
