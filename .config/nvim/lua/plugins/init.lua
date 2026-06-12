@@ -11,7 +11,10 @@ vim.pack.add({
 
 	"https://github.com/stevearc/conform.nvim",
 	"https://github.com/neovim/nvim-lspconfig",
-	"https://github.com/saghen/blink.cmp",
+	{
+		src = "https://github.com/saghen/blink.cmp",
+		version = "v1",
+	},
 	"https://github.com/rafamadriz/friendly-snippets",
 
 	"https://github.com/nvim-mini/mini.indentscope",
@@ -99,7 +102,7 @@ require("blink.cmp").setup({
 	},
 
 	fuzzy = {
-		implementation = "lua",
+		implementation = "rust",
 	},
 })
 

@@ -1,6 +1,13 @@
 function fish_prompt
     set -l last_status $status
 
+    set -l host (hostname -s 2>/dev/null)
+    if test -z "$host"
+        set host (hostname)
+    end
+
+    set_color $warm_muted
+    echo -n "$host "
     set_color $warm_yellow
     echo -n (__prompt_pwd)
     set_color normal
