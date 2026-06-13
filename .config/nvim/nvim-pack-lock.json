@@ -55,7 +55,7 @@
       "src": "https://github.com/brenoprata10/nvim-highlight-colors"
     },
     "nvim-lspconfig": {
-      "rev": "ed19590a3a9792901553c388d1aadafce012f80d",
+      "rev": "a683e0ddf0cf64c6cd689e18ffb480ade3c162b7",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "oil.nvim": {
@@ -63,7 +63,7 @@
       "src": "https://github.com/stevearc/oil.nvim"
     },
     "opencode.nvim": {
-      "rev": "50d85bbef571d4621485a061a9241de5f883d750",
+      "rev": "d83f986c478fbf3e1343f2c8d7cb5c7f455b1414",
       "src": "https://github.com/sudo-tee/opencode.nvim"
     },
     "plenary.nvim": {
