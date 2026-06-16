@@ -35,7 +35,7 @@
       "src": "https://github.com/nvim-mini/mini.comment"
     },
     "mini.icons": {
-      "rev": "284509648db084c5e40a31afa9abb9887c49e04a",
+      "rev": "d48ad47359218d2b019034f95f601b3861180885",
       "src": "https://github.com/nvim-mini/mini.icons"
     },
     "mini.indentscope": {
@@ -63,7 +63,7 @@
       "src": "https://github.com/stevearc/oil.nvim"
     },
     "opencode.nvim": {
-      "rev": "d83f986c478fbf3e1343f2c8d7cb5c7f455b1414",
+      "rev": "f16abcef6f977cb71baed8d59876baecd5077045",
       "src": "https://github.com/sudo-tee/opencode.nvim"
     },
     "plenary.nvim": {
