@@ -13,6 +13,7 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
+include ~/.config/sway/conf.d/output.conf
 include ~/.config/sway/conf.d/autostart.conf
 include ~/.config/sway/conf.d/input-media.conf
 include ~/.config/sway/conf.d/window-rules.conf

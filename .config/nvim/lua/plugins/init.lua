@@ -42,6 +42,8 @@ require("conform").setup({
 		lua = { "stylua" },
 		go = { "gofmt" },
 		rust = { "rustfmt" },
+		sh = { "shfmt" },
+		bash = { "shfmt" },
 		-- json = { "jq" },
 	},
 	format_on_save = {
