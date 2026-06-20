@@ -28,8 +28,8 @@ sort=-time
 group-by=app-name
 
 # ── behavior ──────────────────────────────────────────────────
-default-timeout=5000
-ignore-timeout=0
+default-timeout=2500
+ignore-timeout=1
 
 # ── progress (e.g. volume/brightness) ─────────────────────────
 progress-color=over #6B5E53
@@ -40,21 +40,22 @@ background-color=#141210
 border-color=#352D27
 text-color=#847568
 format=<b>%s</b>\n<span color="#6B5E53">%b</span>
-default-timeout=3000
+default-timeout=1500
 
 [urgency=normal]
 background-color=#221E1A
 border-color=#6B5E53
 text-color=#F5EFE7
-default-timeout=5000
+default-timeout=2500
 
 [urgency=critical]
 background-color=#141210
 border-color=#FF5F6D
 text-color=#F5EFE7
 format=<b><span color="#FF5F6D">%s</span></b>\n<span color="#F5EFE7">%b</span>
-default-timeout=5000
+default-timeout=3000
 
 # ── grouped notifications ─────────────────────────────────────
 [grouped]
 format=<b>%s</b> <span color="#6B5E53">(%g)</span>\n<span color="#847568">%b</span>
+default-timeout=2500
