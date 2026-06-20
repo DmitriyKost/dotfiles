@@ -1,12 +1,12 @@
 # ── appearance ────────────────────────────────────────────────
 font=JetBrainsMono Nerd Font 13
-background-color=#141210
+background-color=#221E1A
 text-color=#F5EFE7
 border-color=#352D27
 border-size=2
-border-radius=0
+border-radius=6
 width=360
-height=140
+height=120
 padding=14
 margin=10
 outer-margin=8,8,0,0
@@ -32,17 +32,19 @@ default-timeout=5000
 ignore-timeout=0
 
 # ── progress (e.g. volume/brightness) ─────────────────────────
-progress-color=over #352D27
+progress-color=over #6B5E53
 
 # ── per-urgency overrides ─────────────────────────────────────
 [urgency=low]
-border-color=#6B5E53
+background-color=#141210
+border-color=#352D27
 text-color=#847568
 format=<b>%s</b>\n<span color="#6B5E53">%b</span>
 default-timeout=3000
 
 [urgency=normal]
-border-color=#352D27
+background-color=#221E1A
+border-color=#6B5E53
 text-color=#F5EFE7
 default-timeout=5000
 
@@ -51,7 +53,7 @@ background-color=#141210
 border-color=#FF5F6D
 text-color=#F5EFE7
 format=<b><span color="#FF5F6D">%s</span></b>\n<span color="#F5EFE7">%b</span>
-default-timeout=10000
+default-timeout=5000
 
 # ── grouped notifications ─────────────────────────────────────
 [grouped]
