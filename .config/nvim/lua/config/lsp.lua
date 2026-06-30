@@ -129,6 +129,12 @@ vim.lsp.config("rust_analyzer", {
 	},
 })
 
+vim.lsp.config("marksman", {
+	cmd = { "marksman", "server" },
+	filetypes = { "markdown" },
+	root_markers = { ".marksman.toml", ".git" },
+})
+
 vim.lsp.enable({
 	"lua_ls",
 	"gopls",
@@ -138,6 +144,7 @@ vim.lsp.enable({
 	-- "cssls",
 	-- "html",
 	"rust_analyzer",
+	"marksman",
 })
 
 vim.api.nvim_create_autocmd("LspAttach", {

@@ -43,3 +43,21 @@ map("n", "<leader>ge", "oif err != nil {<CR>}<ESC>ko", { desc = "Golang err snip
 map("n", "<C-a>", "<Nop>")
 
 map("n", "<leader>mr", "<cmd>RenderMarkdown buf_toggle<CR>", { desc = "Toggle markdown render for buffer" })
+
+-- ── buffers ──────────────────────────────────────────────────
+local function delete_buffer()
+	local bufnr = vim.api.nvim_get_current_buf()
+	local listed = vim.fn.getbufinfo({ buflisted = 1 })
+
+	if #listed > 1 then
+		vim.cmd("bprevious")
+	end
+
+	vim.cmd("bdelete " .. bufnr)
+end
+
+map("n", "<leader><leader>", "<cmd>b#<CR>", { desc = "Alternate buffer" })
+map("n", "<leader>bb", "<cmd>ls<CR>:b<Space>", { desc = "Switch buffer" })
+map("n", "<leader>bn", "<cmd>bnext<CR>", { desc = "Next buffer" })
+map("n", "<leader>bp", "<cmd>bprevious<CR>", { desc = "Previous buffer" })
+map("n", "<leader>bd", delete_buffer, { desc = "Delete buffer" })

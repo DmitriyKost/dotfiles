@@ -11,7 +11,10 @@ vim.pack.add({
 
 	"https://github.com/stevearc/conform.nvim",
 	"https://github.com/neovim/nvim-lspconfig",
-	"https://github.com/saghen/blink.cmp",
+	{
+		src = "https://github.com/saghen/blink.cmp",
+		version = "v1",
+	},
 	"https://github.com/rafamadriz/friendly-snippets",
 
 	"https://github.com/nvim-mini/mini.indentscope",
@@ -39,6 +42,8 @@ require("conform").setup({
 		lua = { "stylua" },
 		go = { "gofmt" },
 		rust = { "rustfmt" },
+		sh = { "shfmt" },
+		bash = { "shfmt" },
 		-- json = { "jq" },
 	},
 	format_on_save = {
@@ -99,7 +104,7 @@ require("blink.cmp").setup({
 	},
 
 	fuzzy = {
-		implementation = "lua",
+		implementation = "rust",
 	},
 })
 
@@ -136,6 +141,9 @@ vim.api.nvim_create_autocmd("FileType", {
 require("render-markdown").setup({
 	completions = { lsp = { enabled = true } },
 	anti_conceal = { enabled = false },
+	bullet = {
+		icons = { "•", "◦", "▪", "▫" },
+	},
 	file_types = { "markdown", "opencode_output" },
 })
 

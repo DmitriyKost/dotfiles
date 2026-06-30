@@ -209,7 +209,7 @@ local function lsp()
 		return ""
 	end
 
-	return "%#St_Lsp#  "
+	return "%#St_Lsp# LSP "
 end
 
 local function position()

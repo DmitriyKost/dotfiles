@@ -14,6 +14,14 @@ require("lazy").plugin({
 			default_global_keymaps = true,
 			default_mode = "build",
 			keymap_prefix = "<leader>o",
+			keymap = {
+				output_window = {
+					["<esc>"] = false,
+				},
+				input_window = {
+					["<esc>"] = false,
+				},
+			},
 			ui = {
 				position = "right",
 				window_width = 0.50,
