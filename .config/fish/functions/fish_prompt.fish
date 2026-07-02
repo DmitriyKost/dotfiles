@@ -35,6 +35,6 @@ function fish_prompt
 
     echo -n ' '
     set_color $warm_orange
-    echo -n '❯ '
+    echo -n ':: '
     set_color normal
 end
