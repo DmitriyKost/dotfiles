@@ -74,11 +74,26 @@ require("nvim-autopairs").setup({
 	disable_filetype = { "TelescopePrompt" },
 })
 
+vim.g.blink_cmp_auto_show = true
+
 require("blink.cmp").setup({
 	keymap = {
 		preset = "default",
 
-		["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
+		["<C-space>"] = {
+			function(cmp)
+				vim.g.blink_cmp_auto_show = not vim.g.blink_cmp_auto_show
+
+				if vim.g.blink_cmp_auto_show then
+					vim.notify("blink.cmp auto-show: on")
+					return cmp.show()
+				else
+					vim.notify("blink.cmp auto-show: off")
+					return cmp.hide()
+				end
+			end,
+		},
+
 		["<CR>"] = { "accept", "fallback" },
 
 		["<Tab>"] = { "snippet_forward", "select_next", "fallback" },
@@ -96,7 +111,12 @@ require("blink.cmp").setup({
 			window = { border = "single" },
 		},
 		ghost_text = { enabled = false },
-		menu = { border = "single" },
+		menu = {
+			border = "single",
+			auto_show = function()
+				return vim.g.blink_cmp_auto_show
+			end,
+		},
 	},
 
 	sources = {

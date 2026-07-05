@@ -4,6 +4,8 @@
   "position": "top",
   "height":   44,
   "spacing":  0,
+  "mode": "hide",
+  "start_hidden": true,
 
   // ─── Module placement (display order, left to right) ───────────────────────
   "modules-left":   ["sway/workspaces", "sway/mode"],

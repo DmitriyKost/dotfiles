@@ -1,13 +1,16 @@
 function fish_prompt
     set -l last_status $status
 
-    set -l host (hostname -s 2>/dev/null)
-    if test -z "$host"
-        set host (hostname)
+    if set -q SSH_TTY
+        set -l host (hostname -s 2>/dev/null)
+        if test -z "$host"
+            set host (hostname)
+        end
+
+        set_color $warm_muted
+        echo -n "$host "
     end
 
-    set_color $warm_muted
-    echo -n "$host "
     set_color $warm_yellow
     echo -n (__prompt_pwd)
     set_color normal
@@ -19,7 +22,7 @@ function fish_prompt
         set_color normal
     end
 
-    if set -q CMD_DURATION; and test "$CMD_DURATION" -ge 100
+    if set -q CMD_DURATION; and test "$CMD_DURATION" -ge 1000
         set -l elapsed (math --scale=2 "$CMD_DURATION / 1000")
         echo -n ' '
         set_color $warm_muted

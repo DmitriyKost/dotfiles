@@ -1,7 +1,7 @@
 {
   "plugins": {
     "blink.cmp": {
-      "rev": "b02ac65634bdb8af2dcc4eb6c807c060e1e15ae6",
+      "rev": "78336bc89ee5365633bcf754d93df01678b5c08f",
       "src": "https://github.com/saghen/blink.cmp",
       "version": "'v1'"
     },
@@ -39,7 +39,7 @@
       "src": "https://github.com/nvim-mini/mini.comment"
     },
     "mini.icons": {
-      "rev": "e56797f90192d81f1fda02e662fc3e8e3d775027",
+      "rev": "24dbea2195c477e57d581215839a6ab915f34b14",
       "src": "https://github.com/nvim-mini/mini.icons"
     },
     "mini.indentscope": {
@@ -59,7 +59,7 @@
       "src": "https://github.com/brenoprata10/nvim-highlight-colors"
     },
     "nvim-lspconfig": {
-      "rev": "292f44408498103c47996ff5c18fd366293840d8",
+      "rev": "d224a1920728ba129880efc700d4a0180ac4ecbb",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "oil.nvim": {
@@ -67,7 +67,7 @@
       "src": "https://github.com/stevearc/oil.nvim"
     },
     "opencode.nvim": {
-      "rev": "dc729d28499cc26432e976c49d4ec40a84fa598c",
+      "rev": "a40b8af3b60b2f9c120912f323f1bf0cf6e072fb",
       "src": "https://github.com/sudo-tee/opencode.nvim"
     },
     "plenary.nvim": {
