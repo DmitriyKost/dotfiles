@@ -1,38 +1,39 @@
-set -g fish_color_normal $warm_fg
-set -g fish_color_command $warm_green
-set -g fish_color_keyword $warm_orange
-set -g fish_color_quote $warm_green
-set -g fish_color_redirection $warm_bright_blue
-set -g fish_color_end $warm_orange
-set -g fish_color_error $warm_red
-set -g fish_color_param $warm_fg
-set -g fish_color_option $warm_fg
-set -g fish_color_comment $warm_muted
-set -g fish_color_operator $warm_orange
-set -g fish_color_escape $warm_bright_magenta
-set -g fish_color_autosuggestion $warm_muted
-set -g fish_color_cancel $warm_red
-set -g fish_color_cwd $warm_fg
-set -g fish_color_cwd_root $warm_red
-set -g fish_color_user $warm_green
-set -g fish_color_host $warm_blue
-set -g fish_color_host_remote $warm_bright_red
-set -g fish_color_status $warm_red
-set -g fish_color_valid_path $warm_fg
-set -g fish_color_match $warm_bright_magenta
-set -g fish_color_selection $warm_selection_fg "--background=$warm_selection"
-set -g fish_color_search_match $warm_selection_fg "--background=$warm_yellow"
-set -g fish_color_history_current $warm_selection_fg "--background=$warm_brown"
+# Commands and strings are semantic green; invalid commands/errors are red; args stay silver.
+set -g fish_color_normal $selene_fg
+set -g fish_color_command $selene_green
+set -g fish_color_keyword $selene_bright_white
+set -g fish_color_quote $selene_green
+set -g fish_color_redirection $selene_bright_blue
+set -g fish_color_end $selene_muted
+set -g fish_color_error $selene_red
+set -g fish_color_param $selene_fg
+set -g fish_color_option $selene_fg
+set -g fish_color_comment $selene_muted
+set -g fish_color_operator $selene_muted
+set -g fish_color_escape $selene_bright_magenta
+set -g fish_color_autosuggestion $selene_muted
+set -g fish_color_cancel $selene_red
+set -g fish_color_cwd $selene_fg
+set -g fish_color_cwd_root $selene_red
+set -g fish_color_user $selene_fg
+set -g fish_color_host $selene_muted
+set -g fish_color_host_remote $selene_bright_red
+set -g fish_color_status $selene_red
+set -g fish_color_valid_path $selene_fg
+set -g fish_color_match $selene_bright_white
+set -g fish_color_selection $selene_selection_fg "--background=$selene_selection"
+set -g fish_color_search_match $selene_bg "--background=$selene_accent_hi"
+set -g fish_color_history_current $selene_selection_fg "--background=$selene_accent_soft"
 
-set -g fish_pager_color_progress $warm_brown
-set -g fish_pager_color_prefix $warm_orange
-set -g fish_pager_color_completion $warm_fg
-set -g fish_pager_color_description $warm_magenta
-set -g fish_pager_color_selected_background "--background=$warm_bright_black"
-set -g fish_pager_color_selected_completion $warm_bright_white
-set -g fish_pager_color_selected_prefix $warm_bright_yellow
-set -g fish_pager_color_selected_description $warm_bright_magenta
-set -g fish_pager_color_secondary_background "--background=$warm_black"
-set -g fish_pager_color_secondary_completion $warm_fg
-set -g fish_pager_color_secondary_prefix $warm_orange
-set -g fish_pager_color_secondary_description $warm_magenta
+set -g fish_pager_color_progress $selene_muted
+set -g fish_pager_color_prefix $selene_accent_hi
+set -g fish_pager_color_completion $selene_fg
+set -g fish_pager_color_description $selene_muted
+set -g fish_pager_color_selected_background "--background=$selene_selection"
+set -g fish_pager_color_selected_completion $selene_bright_white
+set -g fish_pager_color_selected_prefix $selene_bright_white
+set -g fish_pager_color_selected_description $selene_bright_blue
+set -g fish_pager_color_secondary_background "--background=$selene_black"
+set -g fish_pager_color_secondary_completion $selene_fg
+set -g fish_pager_color_secondary_prefix $selene_accent_hi
+set -g fish_pager_color_secondary_description $selene_muted

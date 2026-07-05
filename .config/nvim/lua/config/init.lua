@@ -9,5 +9,5 @@ require("plugins")
 
 require("config.lsp")
 
-vim.cmd.colorscheme("warm")
+vim.cmd.colorscheme("selene")
 require("config.statusline").setup()

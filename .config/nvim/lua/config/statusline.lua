@@ -1,16 +1,25 @@
 local M = {}
 
 local c = {
-	normal = "#68B0FF",
-	insert = "#8AFF80",
-	visual = "#C792EA",
-	replace = "#FF5874",
-	command = "#FFCB6B",
-	terminal = "#4CD5C3",
+	normal = "#777777",
+	insert = "#7FA68D",
+	visual = "#8D86AA",
+	replace = "#B96572",
+	command = "#A6A6A6",
+	terminal = "#72A6A0",
+
+	fg = "#AFAFAF",
+	fg_nc = "#606060",
+	bg = "#000000",
 }
 
 local mode_map = {
 	n = { "NORMAL", "St_NormalMode" },
+	no = { "O-PENDING", "St_NormalMode" },
+	nov = { "O-PENDING", "St_NormalMode" },
+	noV = { "O-PENDING", "St_NormalMode" },
+	["no\22"] = { "O-PENDING", "St_NormalMode" },
+
 	i = { "INSERT", "St_InsertMode" },
 	ic = { "INSERT", "St_InsertMode" },
 	ix = { "INSERT", "St_InsertMode" },
@@ -41,16 +50,6 @@ local function hi(group, opts)
 	vim.api.nvim_set_hl(0, group, opts)
 end
 
-local function hl_fg(group, fallback)
-	local ok, hl = pcall(vim.api.nvim_get_hl, 0, { name = group, link = false })
-
-	if ok and hl and hl.fg then
-		return string.format("#%06x", hl.fg)
-	end
-
-	return fallback
-end
-
 local function hl_bg(group, fallback)
 	local ok, hl = pcall(vim.api.nvim_get_hl, 0, { name = group, link = false })
 
@@ -62,17 +61,17 @@ local function hl_bg(group, fallback)
 end
 
 function M.setup_highlights()
-	local bg = hl_bg("Normal", "NONE")
+	local bg = hl_bg("Normal", c.bg)
 
-	hi("StatusLine", { bg = bg })
-	hi("StatusLineNC", { bg = bg })
+	hi("StatusLine", { fg = c.fg, bg = bg })
+	hi("StatusLineNC", { fg = c.fg_nc, bg = bg })
 
-	hi("St_NormalMode", { fg = hl_fg("St_NormalMode", c.normal), bg = bg, bold = true })
-	hi("St_InsertMode", { fg = hl_fg("St_InsertMode", c.insert), bg = bg, bold = true })
-	hi("St_VisualMode", { fg = hl_fg("St_VisualMode", c.visual), bg = bg, bold = true })
-	hi("St_ReplaceMode", { fg = hl_fg("St_ReplaceMode", c.replace), bg = bg, bold = true })
-	hi("St_CommandMode", { fg = hl_fg("St_CommandMode", c.command), bg = bg, bold = true })
-	hi("St_TerminalMode", { fg = hl_fg("St_TerminalMode", c.terminal), bg = bg, bold = true })
+	hi("St_NormalMode", { fg = c.normal, bg = bg })
+	hi("St_InsertMode", { fg = c.insert, bg = bg })
+	hi("St_VisualMode", { fg = c.visual, bg = bg })
+	hi("St_ReplaceMode", { fg = c.replace, bg = bg })
+	hi("St_CommandMode", { fg = c.command, bg = bg })
+	hi("St_TerminalMode", { fg = c.terminal, bg = bg })
 end
 
 local function mode()
@@ -80,7 +79,7 @@ local function mode()
 	local entry = mode_map[m] or mode_map[m:sub(1, 1)] or { m, "St_NormalMode" }
 	local label, hl = entry[1], entry[2]
 
-	return string.format("%%#%s# %s ", hl, label)
+	return string.format("%%#%s# %s", hl, label)
 end
 
 function M.render()

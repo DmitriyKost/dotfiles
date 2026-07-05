@@ -1,15 +1,19 @@
+# Selene — fzf/zoxide integration
+# fzf wants #RRGGBB values. The selene_* palette variables intentionally
+# omit the leading # because fish set_color uses bare RGB values.
+
 set -gx FZF_DEFAULT_OPTS (string join ' ' -- \
-    "--color=fg:#$warm_fg,bg:#$warm_bg,hl:#$warm_bright_yellow" \
-    "--color=fg+:#$warm_bright_white,bg+:#$warm_bright_black,hl+:#$warm_orange" \
-    "--color=info:#$warm_brown,prompt:#$warm_orange,pointer:#$warm_brown" \
-    "--color=marker:#$warm_bright_magenta,spinner:#$warm_cyan,header:#$warm_bright_blue" \
-    "--color=border:#$warm_bright_black,gutter:#$warm_bg" \
+  "--color=fg:#$selene_fg,bg:#$selene_bg,hl:#$selene_bright_white" \
+  "--color=fg+:#$selene_bright_white,bg+:#$selene_accent_soft,hl+:#$selene_accent_hi" \
+  "--color=info:#$selene_muted,prompt:#$selene_accent_hi,pointer:#$selene_accent_hi" \
+  "--color=marker:#$selene_bright_white,spinner:#$selene_cyan,header:#$selene_bright_blue" \
+  "--color=border:#$selene_line,gutter:#$selene_bg" \
 )
 
 if status is-interactive; and command -q zoxide
-    zoxide init --cmd cd fish | source
+  zoxide init --cmd cd fish | source
 end
 
 if status is-interactive; and command -q fzf
-    fzf --fish | source
+  fzf --fish | source
 end

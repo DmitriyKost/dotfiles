@@ -20,5 +20,5 @@ include ~/.config/sway/conf.d/window-rules.conf
 include ~/.config/sway/conf.d/keybindings.conf
 include ~/.config/sway/conf.d/workspaces.conf
 include ~/.config/sway/conf.d/modes.conf
-include ~/.config/sway/themes/warm.conf
+include ~/.config/sway/themes/selene.conf
 include ~/.config/sway/conf.d/bar.conf

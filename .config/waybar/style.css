@@ -1,75 +1,76 @@
-/* ─── Palette ───────────────────────────────────────────────────────── */
-@define-color bg       #141210;   /* sway $bg       */
-@define-color bg_alt   #221E1A;   /* sway $bg_alt   */
-@define-color fg       #F5EFE7;   /* sway $fg       */
-@define-color fg_alt   #847568;   /* sway $fg_alt   */
-@define-color muted    #6B5E53;   /* sway $muted    */
-@define-color accent   #352D27;   /* sway $accent   */
-@define-color urgent   #FF5F6D;   /* sway $urgent / kitty color1  */
-@define-color warning  #D8A85F;   /* sway $warning                */
-@define-color ok       #8FD39A;   /* kitty color2 (green)         */
-@define-color white    #FFFFFF;   /* kitty color15                */
+/* ─── Selene palette ─────────────────────────────────────────────────── */
+@define-color bg #000000;
+@define-color bg_alt #101010;
+@define-color fg #AFAFAF;
+@define-color fg_alt #686868;
+@define-color muted #565656;
+@define-color accent #202020;
+@define-color accent_hi #B8B8B8;
+@define-color urgent #B96572;
+@define-color warning #B38E5F;
+@define-color ok #7FA68D;
+@define-color white #C8C8C8;
 
 /* ─── Reset & defaults ──────────────────────────────────────────────── */
 * {
-  border:        none;
-  border-radius: 0;
-  font-family:   "JetBrainsMono Nerd Font";
-  font-size:     24px;
-  min-height:    0;
+ border: none;
+ border-radius: 0;
+ font-family: "JetBrainsMono Nerd Font";
+ font-size: 24px;
+ min-height: 0;
 }
 
 /* ─── Bar surface ───────────────────────────────────────────────────── */
 window#waybar {
-  background: @bg;
-  color:      @fg;
+ background: @bg;
+ color: @fg;
 }
 
 /* ─── Workspaces: each button is its own block ──────────────────────── */
 #workspaces {
-  margin:  0;
-  padding: 0;
+ margin: 0;
+ padding: 0;
 }
 
 #workspaces button {
-  padding:       0 8px;
-  margin:        5px 2px;
-  min-width:     0;
-  background:    @bg_alt;
-  color:         @fg_alt;
-  border-radius: 0;
-  box-shadow:    none;
-  transition:    background 150ms ease, color 150ms ease;
+ padding: 0 8px;
+ margin: 5px 2px;
+ min-width: 0;
+ background: @bg_alt;
+ color: @fg_alt;
+ border-radius: 0;
+ box-shadow: none;
+ transition: background 150ms ease, color 150ms ease;
 }
 
 #workspaces button label {
-  padding:   0;
-  margin:    0;
-  min-width: 0;
+ padding: 0;
+ margin: 0;
+ min-width: 0;
 }
 
 #workspaces button.focused {
-  background: @accent;
-  color:      @white;
+ background: @accent;
+ color: @white;
 }
 
 #workspaces button.active {
-  background: @bg_alt;
-  color:      @fg_alt;
+ background: @bg_alt;
+ color: @fg_alt;
 }
 
 #workspaces button.urgent {
-  background: @urgent;
-  color:      @bg;
+ background: @urgent;
+ color: @bg;
 }
 
 /* ─── Binding mode indicator ────────────────────────────────────────── */
 #mode {
-  padding:       0 12px;
-  margin:        5px 3px;
-  background:    @warning;
-  color:         @bg;
-  border-radius: 0;
+ padding: 0 12px;
+ margin: 5px 3px;
+ background: @accent_hi;
+ color: @bg;
+ border-radius: 0;
 }
 
 /* ─── Right modules: pill surface ───────────────────────────────────── */
@@ -81,30 +82,28 @@ window#waybar {
 #custom-nvidia,
 #custom-vpn,
 #tray {
-  padding:       0 12px;
-  margin:        5px 3px;
-  background:    @bg_alt;
-  color:         @fg;
-  border-radius: 0;
-  transition:    color 200ms ease, background 200ms ease;
+ padding: 0 12px;
+ margin: 5px 3px;
+ background: @bg_alt;
+ color: @fg;
+ border-radius: 0;
+ transition: color 200ms ease, background 200ms ease;
 }
 
 #tray { padding: 0 8px; }
-
-/* Outer blocks flush with the bar edges */
 #tray { margin-right: 0; }
 
 /* ─── Per-module accent colors ──────────────────────────────────────── */
-#language { color: @warning; }
+#language { color: @accent_hi; }
 
 /* Player state */
 #custom-player.playing { color: @ok; }
-#custom-player.paused  { color: @warning; }
-#custom-player.none    { color: @muted; }
+#custom-player.paused { color: @fg_alt; }
+#custom-player.none { color: @muted; }
 
 /* Volume state */
 #custom-volume.muted { color: @urgent; }
 
 /* VPN state */
-#custom-vpn.on  { color: @ok; }
+#custom-vpn.on { color: @accent_hi; }
 #custom-vpn.off { color: @muted; }
