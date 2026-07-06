@@ -36,7 +36,7 @@ set -g selene_statusline_bg 050505
 set -g selene_line 151515
 
 set -g selene_mode_normal $selene_accent_hi
-set -g selene_mode_insert $selene_cyan
+set -g selene_mode_insert $selene_green
 set -g selene_mode_visual $selene_magenta
 set -g selene_mode_replace $selene_red
 set -g selene_mode_command $selene_yellow

@@ -1,75 +1,96 @@
 configuration {
-    show-icons: true;
-    modes:      "drun";
-    font:       "JetBrainsMono Nerd Font 16";
+	show-icons: true;
+	modes: "drun";
+	font: "JetBrainsMono Nerd Font 16";
 }
 
 @theme "/dev/null"
 
 * {
-    background-color: transparent;
-    text-color:       #F5EFE7;
+	background-color: transparent;
+	text-color: #AFAFAF;
+
+	bg: #000000;
+	bg-alt: #080808;
+	bg-soft: #121212;
+	border: #262626;
+
+	fg: #AFAFAF;
+	fg-muted: #777777;
+	fg-dim: #606060;
+	accent: #A6A6A6;
+	accent-hi: #C8C8C8;
 }
 
 window {
-    background-color: #141210;
-    width:            630px;
-    border:           1px solid;
-    border-color:     #352D27;
-    border-radius:    6px;
-    padding:          0;
+	background-color: @bg;
+	width: 630px;
+
+	border: 1px solid;
+	border-color: @border;
+	border-radius: 6px;
+
+	padding: 0;
 }
 
 mainbox {
-    children: [ inputbar, listview ];
-    padding:  10px;
-    spacing:  8px;
+	children: [ inputbar, listview ];
+	padding: 10px;
+	spacing: 8px;
 }
 
 inputbar {
-    children:         [ prompt, entry ];
-    padding:          6px 8px;
-    spacing:          8px;
-    background-color: #221E1A;
-    border-radius:    6px;
+	children: [ prompt, entry ];
+
+	padding: 6px 8px;
+	spacing: 8px;
+
+	background-color: @bg-alt;
+	border-radius: 6px;
 }
 
 prompt {
-    text-color: #D8A85F;
-    str:        "❯";
+	text-color: @accent;
+	str: "❯";
 }
 
 entry {
-    padding:           0;
-    placeholder:       "";
-    placeholder-color: #6B5E53;
+	padding: 0;
+
+	text-color: @fg;
+	placeholder: "";
+	placeholder-color: @fg-muted;
 }
 
 listview {
-    lines:     8;
-    columns:   1;
-    scrollbar: false;
-    padding:   0;
-    spacing:   2px;
+	lines: 8;
+	columns: 1;
+
+	scrollbar: false;
+
+	padding: 0;
+	spacing: 2px;
 }
 
 element {
-    padding: 2px 6px;
-    spacing: 8px;
+	padding: 2px 6px;
+	spacing: 8px;
+
+	text-color: @fg;
+	border-radius: 6px;
 }
 
 element selected {
-    background-color: #221E1A;
-    text-color:       #D8A85F;
-    border-radius:    6px;
+	background-color: @bg-soft;
+	text-color: @accent-hi;
 }
 
 element-icon {
-    size:       0.9em;
-    text-color: inherit;
+	size: 0.9em;
+	text-color: inherit;
 }
 
 element-text {
-    text-color: inherit;
-    vertical-align: 0.5;
+	text-color: inherit;
+	vertical-align: 0.5;
 }

@@ -1,19 +1,23 @@
 # ── appearance ────────────────────────────────────────────────
 font=JetBrainsMono Nerd Font 13
-background-color=#221E1A
-text-color=#F5EFE7
-border-color=#352D27
+
+background-color=#080808
+text-color=#AFAFAF
+border-color=#262626
+
 border-size=2
 border-radius=6
+
 width=360
 height=120
+
 padding=14
 margin=10
 outer-margin=8,8,0,0
 
 # ── typography ────────────────────────────────────────────────
 markup=1
-format=<b>%s</b>\n<span color="#847568">%b</span>
+format=<b>%s</b>\n<span color="#777777">%b</span>
 
 # ── icons ─────────────────────────────────────────────────────
 icons=1
@@ -32,32 +36,33 @@ default-timeout=2500
 ignore-timeout=1
 
 # ── progress (e.g. volume/brightness) ─────────────────────────
-progress-color=over #6B5E53
+progress-color=over #606060
 
 # ── per-urgency overrides ─────────────────────────────────────
 [urgency=low]
-background-color=#141210
-border-color=#352D27
-text-color=#847568
-format=<b>%s</b>\n<span color="#6B5E53">%b</span>
+background-color=#000000
+border-color=#1A1A1A
+text-color=#777777
+format=<b>%s</b>\n<span color="#606060">%b</span>
 default-timeout=1500
 
 [urgency=normal]
-background-color=#221E1A
-border-color=#6B5E53
-text-color=#F5EFE7
+background-color=#080808
+border-color=#303030
+text-color=#AFAFAF
+format=<b>%s</b>\n<span color="#777777">%b</span>
 default-timeout=2500
 
 [urgency=critical]
-background-color=#141210
-border-color=#FF5F6D
-text-color=#F5EFE7
-format=<b><span color="#FF5F6D">%s</span></b>\n<span color="#F5EFE7">%b</span>
+background-color=#050505
+border-color=#B96572
+text-color=#C8C8C8
+format=<b><span color="#B96572">%s</span></b>\n<span color="#AFAFAF">%b</span>
 default-timeout=3000
 
 # ── grouped notifications ─────────────────────────────────────
 [grouped]
-format=<b>%s</b> <span color="#6B5E53">(%g)</span>\n<span color="#847568">%b</span>
+format=<b>%s</b> <span color="#606060">(%g)</span>\n<span color="#777777">%b</span>
 default-timeout=2500
 
 # ── keyboard layout OSD ────────────────────────────────────────
@@ -66,18 +71,19 @@ anchor=top-right
 layer=overlay
 
 font=JetBrainsMono Nerd Font 32
+
 width=96
 # no fixed height: let mako size it naturally
 padding=12,18
 margin=0
 outer-margin=72,0,0,0
 
-background-color=#221E1Add
-border-color=#6B5E53
+background-color=#080808dd
+border-color=#303030
 border-size=2
 border-radius=16
-text-color=#F5EFE7
 
+text-color=#AFAFAF
 icons=0
 format=<span rise="1500"><b>%s</b></span>
 text-alignment=center

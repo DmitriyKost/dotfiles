@@ -9,8 +9,6 @@ vim.g.colors_name = "selene"
 local M = {}
 
 M.base_30 = {
-	-- Selene: OLED-black with neutral silver UI, not blue-white chrome.
-	-- Hue is reserved for syntax meaning; editor structure stays black/gray/silver.
 	white = "#AFAFAF",
 	black = "#000000",
 	darker_black = "#000000",
@@ -29,14 +27,12 @@ M.base_30 = {
 
 	line = "#101010",
 
-	green = "#8BAA8F",
-	vibrant_green = "#A7C2AA",
+	green = "#7FA68D",
+	vibrant_green = "#94BCA1",
 
-	-- Blue is deliberately steel-gray, not icy/cyan.
 	nord_blue = "#9AA3AD",
 	blue = "#8490A0",
 
-	-- Amber/brass warnings. Shifted away from olive-green yellow.
 	yellow = "#B38E5F",
 	sun = "#C7A66E",
 
@@ -44,7 +40,7 @@ M.base_30 = {
 	dark_purple = "#87809C",
 
 	teal = "#7FA3A0",
-	copper = "#A27961", -- reserved warm swatch; not used by UI chrome
+	copper = "#A27961",
 	accent = "#909090",
 
 	cyan = "#8AA6A5",
@@ -76,7 +72,7 @@ M.base_16 = {
 	base08 = "#B56A72",
 	base09 = "#8AA6A5",
 	base0A = "#B38E5F",
-	base0B = "#8BAA8F",
+	base0B = "#7E967F",
 	base0C = "#7FA3A0",
 	base0D = "#8490A0",
 	base0E = "#9B94B3",
@@ -86,7 +82,7 @@ M.base_16 = {
 M.ansi = {
 	"#000000",
 	"#B56A72",
-	"#8BAA8F",
+	"#7E967F",
 	"#B38E5F",
 	"#8490A0",
 	"#9B94B3",
@@ -94,7 +90,7 @@ M.ansi = {
 	"#AFAFAF",
 	"#181818",
 	"#C7838A",
-	"#A7C2AA",
+	"#91A694",
 	"#C7A66E",
 	"#9AA3AD",
 	"#A9A2BC",
@@ -104,9 +100,6 @@ M.ansi = {
 
 local c = M.base_30
 local b = M.base_16
-
--- Design rule: UI chrome is black/gray/silver first. Blue is muted steel,
--- and warm hues are reserved for semantic warnings/errors or terminal ANSI compatibility.
 
 local function hi(group, opts)
 	vim.api.nvim_set_hl(0, group, opts)
@@ -144,7 +137,7 @@ local groups = {
 	MatchParen = { fg = c.silver, bg = c.one_bg2, bold = true },
 
 	Pmenu = { fg = c.white, bg = c.darker_black },
-	PmenuSel = { fg = c.black, bg = c.pmenu_bg, bold = true },
+	PmenuSel = { fg = c.black, bg = c.pmenu_bg },
 	PmenuSbar = { bg = c.one_bg },
 	PmenuThumb = { bg = c.grey },
 
@@ -161,10 +154,14 @@ local groups = {
 	Directory = { fg = c.nord_blue, bold = true },
 	Title = { fg = c.silver, bold = true },
 
-	ErrorMsg = { fg = c.red, bold = true },
-	WarningMsg = { fg = c.yellow, bold = true },
-	MoreMsg = { fg = c.silver, bold = true },
-	Question = { fg = c.silver, bold = true },
+	ErrorMsg = { fg = c.red },
+	WarningMsg = { fg = c.yellow },
+	ModeMsg = { fg = c.dim_silver, bg = c.black },
+	MsgArea = { fg = c.white, bg = c.black },
+	MsgSeparator = { fg = c.line, bg = c.black },
+	CmdLine = { fg = c.white, bg = c.black },
+	MoreMsg = { fg = c.dim_silver },
+	Question = { fg = c.silver },
 
 	NonText = { fg = c.grey },
 	SpecialKey = { fg = c.grey },
@@ -399,12 +396,12 @@ local groups = {
 	SnippetTabstopActive = { bg = "NONE" },
 
 	-- statusline custom groups
-	St_NormalMode = { fg = c.silver, bg = c.statusline_bg, bold = true },
-	St_InsertMode = { fg = c.teal, bg = c.statusline_bg, bold = true },
-	St_VisualMode = { fg = c.silver, bg = c.statusline_bg, bold = true },
-	St_ReplaceMode = { fg = c.red, bg = c.statusline_bg, bold = true },
-	St_CommandMode = { fg = c.nord_blue, bg = c.statusline_bg, bold = true },
-	St_TerminalMode = { fg = c.teal, bg = c.statusline_bg, bold = true },
+	St_NormalMode = { fg = c.dim_silver, bg = c.statusline_bg },
+	St_InsertMode = { fg = c.teal, bg = c.statusline_bg },
+	St_VisualMode = { fg = c.lavender, bg = c.statusline_bg },
+	St_ReplaceMode = { fg = c.red, bg = c.statusline_bg },
+	St_CommandMode = { fg = c.silver, bg = c.statusline_bg },
+	St_TerminalMode = { fg = c.teal, bg = c.statusline_bg },
 
 	St_File = { fg = c.white, bg = c.statusline_bg },
 	St_Git = { fg = c.dim_silver, bg = c.statusline_bg },
@@ -412,7 +409,7 @@ local groups = {
 	St_DiagWarn = { fg = c.yellow, bg = c.statusline_bg },
 	St_DiagInfo = { fg = c.nord_blue, bg = c.statusline_bg },
 	St_DiagHint = { fg = c.teal, bg = c.statusline_bg },
-	St_Lsp = { fg = c.silver, bg = c.statusline_bg, bold = true },
+	St_Lsp = { fg = c.silver, bg = c.statusline_bg },
 	St_Pos = { fg = c.white, bg = c.statusline_bg },
 
 	-- mini.indentscope
@@ -443,9 +440,9 @@ local telescope = {
 	TelescopePromptBorder = { fg = c.line, bg = c.darker_black },
 	TelescopePromptTitle = { fg = c.black, bg = c.silver, bold = true },
 
-	TelescopeSelection = { bg = c.one_bg3, bold = true },
+	TelescopeSelection = { bg = c.one_bg3 },
 	TelescopeSelectionCaret = { fg = c.silver },
-	TelescopeMatching = { fg = c.silver, bold = true },
+	TelescopeMatching = { fg = c.silver },
 }
 
 for group, opts in pairs(telescope) do
@@ -458,7 +455,7 @@ local cmp = {
 	BlinkCmpMenuBorder = { fg = c.line, bg = c.black },
 
 	BlinkCmpLabel = { fg = c.white },
-	BlinkCmpLabelMatch = { fg = c.silver, bold = true },
+	BlinkCmpLabelMatch = { fg = c.silver },
 	BlinkCmpLabelDetail = { fg = c.grey_fg },
 	BlinkCmpLabelDescription = { fg = c.light_grey },
 	BlinkCmpKind = { fg = c.dim_silver },
