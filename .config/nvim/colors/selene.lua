@@ -53,7 +53,7 @@ M.base_30 = {
 	teal = "#72A6A0",
 	cyan = "#86BCB5",
 
-	orange = "#9A735E",
+	orange = "#9A735E", -- kept for ANSI compatibility, not used as UI accent
 	accent = "#A6A6A6",
 	accent_hi = "#C8C8C8",
 	cursor = "#B8B8B8",
@@ -786,6 +786,64 @@ local plugins = {
 }
 
 for group, opts in pairs(plugins) do
+	hi(group, opts)
+end
+
+local render_markdown = {
+	RenderMarkdownH1 = { fg = c.bright_white },
+	RenderMarkdownH2 = { fg = c.silver },
+	RenderMarkdownH3 = { fg = c.silver },
+	RenderMarkdownH4 = { fg = c.grey_fg2 },
+	RenderMarkdownH5 = { fg = c.grey_fg2 },
+	RenderMarkdownH6 = { fg = c.grey_fg2 },
+	RenderMarkdownH1Bg = { fg = c.bright_white, bg = c.black },
+	RenderMarkdownH2Bg = { fg = c.silver, bg = c.black },
+	RenderMarkdownH3Bg = { fg = c.silver, bg = c.black },
+	RenderMarkdownH4Bg = { fg = c.grey_fg2, bg = c.black },
+	RenderMarkdownH5Bg = { fg = c.grey_fg2, bg = c.black },
+	RenderMarkdownH6Bg = { fg = c.grey_fg2, bg = c.black },
+
+	RenderMarkdownCode = { fg = c.white, bg = c.black },
+	RenderMarkdownCodeInfo = { fg = c.grey_fg2, bg = c.black },
+	RenderMarkdownCodeBorder = { fg = c.one_bg2, bg = c.black },
+	RenderMarkdownCodeFallback = { fg = c.grey_fg2, bg = c.black },
+	RenderMarkdownCodeInline = { fg = c.white, bg = c.one_bg },
+	RenderMarkdownInlineHighlight = { fg = c.bright_white, bg = c.one_bg2 },
+
+	RenderMarkdownQuote = { fg = c.grey_fg2 },
+	RenderMarkdownQuote1 = { fg = c.grey_fg2 },
+	RenderMarkdownQuote2 = { fg = c.grey_fg2 },
+	RenderMarkdownQuote3 = { fg = c.grey_fg },
+	RenderMarkdownQuote4 = { fg = c.grey_fg },
+	RenderMarkdownQuote5 = { fg = c.grey_fg },
+	RenderMarkdownQuote6 = { fg = c.grey_fg },
+
+	RenderMarkdownBullet = { fg = c.grey_fg2 },
+	RenderMarkdownDash = { fg = c.grey },
+	RenderMarkdownSign = { fg = c.grey, bg = c.black },
+	RenderMarkdownIndent = { fg = c.grey },
+	RenderMarkdownHtmlComment = { fg = c.grey_fg2, italic = true },
+	RenderMarkdownMath = { fg = c.yellow },
+
+	RenderMarkdownLink = { fg = c.blue },
+	RenderMarkdownLinkTitle = { fg = c.blue },
+	RenderMarkdownWikiLink = { fg = c.blue },
+
+	RenderMarkdownUnchecked = { fg = c.grey_fg2 },
+	RenderMarkdownChecked = { fg = c.green },
+	RenderMarkdownTodo = { fg = c.grey_fg2 },
+
+	RenderMarkdownTableHead = { fg = c.silver, bg = c.black },
+	RenderMarkdownTableRow = { fg = c.white, bg = c.black },
+
+	RenderMarkdownSuccess = { fg = c.green },
+	RenderMarkdownInfo = { fg = c.blue },
+	RenderMarkdownHint = { fg = c.teal },
+	RenderMarkdownWarn = { fg = c.yellow },
+	RenderMarkdownError = { fg = c.red },
+}
+
+for group, opts in pairs(render_markdown) do
 	hi(group, opts)
 end
 
