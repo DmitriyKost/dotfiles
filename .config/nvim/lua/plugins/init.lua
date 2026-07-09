@@ -160,11 +160,51 @@ vim.api.nvim_create_autocmd("FileType", {
 
 require("render-markdown").setup({
 	completions = { lsp = { enabled = true } },
+
 	anti_conceal = { enabled = false },
+
 	bullet = {
 		icons = { "•", "◦", "▪", "▫" },
 	},
+
 	file_types = { "markdown", "opencode_output" },
+
+	code = {
+		enabled = true,
+
+		-- Kill the code-block language header entirely.
+		-- This removes the ` sh` + repeated `█` overlay.
+		style = "normal",
+		language = false,
+		language_icon = false,
+		language_name = false,
+		language_info = false,
+
+		-- No top/bottom bars.
+		border = "none",
+		language_border = "",
+		language_left = "",
+		language_right = "",
+		highlight_border = false,
+
+		-- No large gray background slabs.
+		disable_background = true,
+		background_inset = 0,
+
+		-- Keep layout plain.
+		width = "block",
+		left_pad = 0,
+		right_pad = 0,
+
+		-- Inline code can still have subtle rendering.
+		inline = true,
+		inline_pad = 0,
+
+		highlight = "RenderMarkdownCode",
+		highlight_info = "RenderMarkdownCodeInfo",
+		highlight_fallback = "RenderMarkdownCodeFallback",
+		highlight_inline = "RenderMarkdownCodeInline",
+	},
 })
 
 require("mini.icons").setup()

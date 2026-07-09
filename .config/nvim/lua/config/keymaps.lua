@@ -3,7 +3,7 @@ local map = vim.keymap.set
 map("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlight" })
 
 -- map("n", ";", ":", { desc = "CMD enter command mode" })
-map("i", "jk", "<ESC>", { desc = "Escape insert mode" })
+-- map("i", "jk", "<ESC>", { desc = "Escape insert mode" })
 
 map("n", "-", "<cmd>Oil<CR>", { desc = "Open parent directory" })
 map("n", "<leader>e", "<cmd>Oil<CR>", { desc = "Explorer" })
