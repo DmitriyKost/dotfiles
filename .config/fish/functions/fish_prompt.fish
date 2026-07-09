@@ -1,5 +1,18 @@
 function fish_prompt
- set -l last_status $status
+  set -l last_status $status
+
+  if contains -- --final-rendering $argv
+    if test $last_status -eq 0
+        set_color $selene_prompt_final
+        echo -n '› '
+    else
+        set_color $selene_prompt_fail
+        echo -n '✗ '
+    end
+
+    set_color normal
+    return
+ end
 
  if set -q SSH_TTY
   set -l host (hostname -s 2>/dev/null)
