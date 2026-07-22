@@ -74,7 +74,7 @@ require("nvim-autopairs").setup({
 	disable_filetype = { "TelescopePrompt" },
 })
 
-vim.g.blink_cmp_auto_show = true
+vim.g.blink_cmp_auto_show = false
 
 require("blink.cmp").setup({
 	keymap = {
