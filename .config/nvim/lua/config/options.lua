@@ -15,6 +15,7 @@ opt.tabstop = 4
 opt.softtabstop = 4
 opt.smartindent = true
 opt.wrap = false
+opt.showtabline = 0
 
 opt.ignorecase = true
 opt.smartcase = true
@@ -75,9 +76,6 @@ o.winborder = "single"
 
 -- кастомный курсор (разные формы в разных режимах)
 -- opt.guicursor = "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50"
-
--- показывать tabline (если не используешь bufferline)
--- opt.showtabline = 1
 
 -- fold (сворачивание кода)
 -- opt.foldcolumn = "0"
