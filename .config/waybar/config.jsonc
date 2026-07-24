@@ -2,7 +2,7 @@
 {
   "layer":    "top",
   "position": "top",
-  "height":   44,
+  "height":   66,
   "spacing":  0,
   "mode": "hide",
   "start_hidden": true,
@@ -78,6 +78,6 @@
   },
 
   "tray": {
-    "spacing": 10
+    "spacing": 15
   }
 }
